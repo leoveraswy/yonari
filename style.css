@@ -1,0 +1,1919 @@
+/* ========================================
+   YONARI ♡ — COLOR PALETTE
+======================================== */
+
+:root {
+    --blue: #C8E4FF;
+    --pink: #FFD6E9;
+    --purple: #E2D5FF;
+    --yellow: #FFF0B8;
+    --cream: #FFFAFD;
+
+    --text: #706887;
+    --pink-dark: #D78FB5;
+    --blue-dark: #83A9D7;
+
+    --white: #FFFFFF;
+    --shadow: 0 8px 24px rgba(150, 130, 180, 0.12);
+}
+
+
+/* ========================================
+   RESET & GENERAL STYLES
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-height: 100vh;
+    padding: 28px 16px;
+
+    background:
+        radial-gradient(circle at 10% 15%,
+            #FFE5F1 0, transparent 28%),
+        radial-gradient(circle at 90% 25%,
+            #E5DEFF 0, transparent 30%),
+        radial-gradient(circle at 50% 85%,
+            #DFF0FF 0, transparent 35%),
+        var(--cream);
+
+    color: var(--text);
+    font-family: "Trebuchet MS", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* ========================================
+   DESKTOP CONTAINER
+======================================== */
+
+.desktop {
+    position: relative;
+    isolation: isolate;
+
+    width: min(100%, 1050px);
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.62);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+
+/* ========================================
+   TOP NAVIGATION BAR
+======================================== */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 16px 28px;
+
+    background: rgba(255, 250, 253, 0.92);
+    border-bottom: 1px solid #F2E6F3;
+    backdrop-filter: blur(14px);
+}
+
+.logo {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue-dark);
+}
+
+.logo span {
+    color: var(--pink-dark);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation a {
+    font-size: 0.85rem;
+    transition: color 0.25s ease;
+}
+
+.navigation a:hover {
+    color: var(--pink-dark);
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.window-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(1) {
+    background: #FFB8D7;
+}
+
+.window-dots span:nth-child(2) {
+    background: #FFE29B;
+}
+
+.window-dots span:nth-child(3) {
+    background: #B8E7C8;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 390px;
+    padding: 80px 24px;
+
+    text-align: center;
+    background: linear-gradient(135deg,
+            #FCE7F3,
+            #E7E7FF 55%,
+            #E0F2FF);
+
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: #A18ABD;
+}
+
+.hero h1 {
+    font-size: clamp(2.3rem, 6vw, 4rem);
+    line-height: 1.25;
+    color: #8BA7D9;
+}
+
+.hero h1 span {
+    color: #D58EB7;
+}
+
+.hero-description {
+    max-width: 390px;
+    margin: 18px auto 24px;
+    font-size: 1rem;
+}
+
+.cute-button {
+    display: inline-block;
+    padding: 11px 25px;
+
+    background: white;
+    border: 2px solid #F5D4E7;
+    border-radius: 50px;
+
+    color: #C17EA7;
+    box-shadow: 0 5px 0 #F1C7DE;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cute-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 0 #F1C7DE;
+}
+
+.tiny-note {
+    margin-top: 24px;
+    font-size: 0.75rem;
+    color: #A18ABD;
+}
+
+
+/* Hero stickers and sparkles */
+
+.sticker {
+    position: absolute;
+    z-index: 1;
+
+    width: clamp(75px, 10vw, 115px);
+    height: auto;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.sticker-left {
+    top: 22%;
+    left: 9%;
+
+    transform: rotate(-12deg);
+}
+
+.sticker-right {
+    right: 9%;
+    bottom: 20%;
+
+    animation-delay: -2s;
+}
+
+/* Images inside the welcome-page stickers */
+
+.welcome-sticker-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-star {
+    position: absolute;
+    color: white;
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.star-one {
+    top: 16%;
+    right: 25%;
+    font-size: 2rem;
+}
+
+.star-two {
+    bottom: 20%;
+    left: 24%;
+    font-size: 1.7rem;
+    animation-delay: -1s;
+}
+
+.star-three {
+    top: 25%;
+    left: 28%;
+    font-size: 1.2rem;
+}
+
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+.section {
+    padding: 55px 7%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: #9A89C6;
+}
+
+.section-heading span {
+    color: #E5A4C9;
+}
+
+
+/* ========================================
+   SCRAPBOOK CARDS
+======================================== */
+
+.scrapbook {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid white;
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.scrapbook:hover {
+    transform: translateY(-5px) rotate(-0.3deg);
+    box-shadow: 0 14px 30px rgba(150, 130, 180, 0.17);
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    max-width: 690px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.profile-art {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 140px;
+    aspect-ratio: 1;
+
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+}
+
+.profile-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.profile-sparkle,
+.profile-heart {
+    position: absolute;
+    color: white;
+}
+
+.profile-sparkle {
+    top: 12px;
+    right: 15px;
+}
+
+.profile-heart {
+    bottom: 10px;
+    left: 15px;
+    font-size: 1.5rem;
+}
+
+.about-info {
+    flex: 1;
+}
+
+.card-label {
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--pink-dark);
+}
+
+.about-info h3,
+.dream-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: #8D9FCC;
+}
+
+.about-info>p:not(.card-label),
+.dream-card>div>p:not(.card-label) {
+    font-size: 0.9rem;
+}
+
+.mini-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.mini-tags span {
+    padding: 4px 10px;
+    background: #F7F0FF;
+    border-radius: 50px;
+    font-size: 0.7rem;
+}
+
+.tape {
+    position: absolute;
+    top: -8px;
+    right: 25px;
+
+    width: 65px;
+    height: 18px;
+
+    background: rgba(255, 221, 165, 0.75);
+    transform: rotate(5deg);
+}
+
+
+/* ========================================
+   FAVORITES GRID
+======================================== */
+
+.favorite-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.favorite-card {
+    padding: 23px 15px;
+    text-align: center;
+}
+
+.favorite-card>img {
+    display: block;
+
+    width: 95px;
+    height: 95px;
+
+    margin: 0 auto 12px;
+    object-fit: contain;
+}
+
+.pink-card {
+    background: #FFF0F6;
+}
+
+.blue-card {
+    background: #EDF6FF;
+}
+
+.purple-card {
+    background: #F3EDFF;
+}
+
+.yellow-card {
+    background: #FFF8DE;
+}
+
+.card-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 2.3rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+.favorite-card:nth-child(2) .card-icon {
+    animation-delay: -1s;
+}
+
+.favorite-card:nth-child(3) .card-icon {
+    animation-delay: -2s;
+}
+
+.favorite-card:nth-child(4) .card-icon {
+    animation-delay: -3s;
+}
+
+.favorite-card h3 {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.favorite-card p {
+    font-size: 0.75rem;
+}
+
+
+/* ========================================
+   DREAMS CARD
+======================================== */
+
+.dream-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 28px;
+    background: linear-gradient(120deg, #FFF5D5, #FFF0F7);
+}
+
+.dream-art {
+    display: block;
+    flex-shrink: 0;
+
+    width: 100px;
+    height: 120px;
+
+    object-fit: contain;
+}
+
+.dream-card>div:nth-child(2) {
+    flex: 1;
+}
+
+.surprise-button {
+    padding: 10px 15px;
+
+    border: 0;
+    border-radius: 50px;
+
+    background: white;
+    color: #B17DB4;
+
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.surprise-button:hover {
+    transform: scale(1.05);
+}
+
+.surprise-message {
+    margin-top: 18px;
+    padding: 18px;
+
+    background: #F2EAFF;
+    border: 1px dashed #C9B5F2;
+    border-radius: 16px;
+
+    text-align: center;
+    color: #8F7CB9;
+}
+
+.surprise-message:not([hidden]) {
+    animation: pop-in 0.4s ease both;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    padding: 28px 20px;
+    background: #F8F0FF;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.footer p+p {
+    margin-top: 5px;
+    color: #A899C7;
+}
+
+
+/* ========================================
+   FLOATING BACKGROUND DECORATIONS
+======================================== */
+
+.sparkle {
+    position: fixed;
+    z-index: -1;
+
+    color: #D6B8F5;
+    pointer-events: none;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 15%;
+    left: 4%;
+    font-size: 2rem;
+}
+
+.sparkle-two {
+    top: 60%;
+    right: 5%;
+    font-size: 1.7rem;
+    animation-delay: -2s;
+}
+
+.sparkle-three {
+    top: 82%;
+    left: 5%;
+    color: #EAAED0;
+    font-size: 2rem;
+    animation-delay: -3s;
+}
+
+.sparkle-four {
+    top: 35%;
+    right: 3%;
+    font-size: 1.3rem;
+    animation-delay: -1s;
+}
+
+.sparkle-five {
+    top: 45%;
+    left: 2%;
+    color: #E8C875;
+    font-size: 1.5rem;
+    animation-delay: -2.5s;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes float {
+
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -12px;
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.45;
+        scale: 0.85;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1.15;
+    }
+}
+
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 760px) {
+    body {
+        padding: 12px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .navigation a {
+        font-size: 0.78rem;
+    }
+
+    .window-dots {
+        display: none;
+    }
+
+    .hero {
+        min-height: 360px;
+        padding: 65px 20px;
+    }
+
+    .sticker {
+        font-size: 2.5rem;
+    }
+
+    .sticker-left {
+        top: 8%;
+        left: 5%;
+    }
+
+    .sticker-right {
+        right: 5%;
+        bottom: 8%;
+    }
+
+    .section {
+        padding: 42px 6%;
+    }
+
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 20px;
+    }
+
+    .mini-tags {
+        justify-content: center;
+    }
+
+    .favorite-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .dream-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .navigation {
+        gap: 9px;
+    }
+
+    .navigation a {
+        font-size: 0.7rem;
+    }
+
+    .favorite-card {
+        padding: 18px 10px;
+    }
+
+    .favorite-card h3 {
+        font-size: 0.85rem;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Click-to-sparkle effect */
+
+.click-sparkle {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+
+    color: #C4A6FF;
+    font-size: 22px;
+
+    animation: sparkle-pop 0.7s ease-out forwards;
+}
+
+@keyframes sparkle-pop {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -80%) scale(1.5) rotate(45deg);
+    }
+}
+
+/* ========================================
+   YONARI ♡ — SANRIO STICKER MAGIC
+======================================== */
+
+/* Floating character layer */
+
+.floating-stickers {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+.floating-character {
+    position: absolute;
+
+    width: clamp(100px, 12vw, 145px);
+    height: auto;
+
+    object-fit: contain;
+    filter: drop-shadow(0 5px 8px rgba(130, 110, 170, 0.12));
+
+    animation: character-float 5s ease-in-out infinite;
+}
+
+
+/* Left side — Pompompurin */
+
+.purin-float {
+    top: 19%;
+    left: 1.5%;
+
+    width: clamp(100px, 12vw, 145px);
+
+    animation-delay: -1s;
+}
+
+
+/* Left side — My Sweet Piano */
+
+.piano-float {
+    top: 61%;
+    left: 2%;
+
+    width: clamp(95px, 11vw, 135px);
+
+    animation-delay: -3s;
+}
+
+/* Right side — Keroppi */
+
+.keroppi-float {
+    top: 39%;
+    right: 1.5%;
+
+    width: clamp(100px, 12vw, 145px);
+
+    animation-delay: -2s;
+}
+
+/* ========================================
+   STICKERS ON SCRAPBOOK CARDS
+======================================== */
+
+.card-sticker {
+    position: absolute;
+    z-index: 2;
+
+    width: 65px;
+    height: auto;
+    object-fit: contain;
+
+    pointer-events: none;
+
+    filter: drop-shadow(0 3px 4px rgba(130, 110, 170, 0.12));
+
+    animation: sticker-bob 4s ease-in-out infinite;
+}
+
+
+/* About Me sticker */
+
+.about-sticker {
+    width: 78px;
+
+    right: 18px;
+    bottom: 12px;
+
+    transform: rotate(8deg);
+}
+
+
+/* Favorite card stickers */
+
+.favorite-card {
+    padding-bottom: 75px;
+}
+
+.music-sticker {
+    width: 65px;
+
+    right: 12px;
+    bottom: 4px;
+
+    animation-delay: -1s;
+}
+
+.stories-sticker {
+    width: 62px;
+
+    right: 12px;
+    bottom: 4px;
+
+    animation-delay: -2s;
+}
+
+.art-sticker {
+    width: 65px;
+
+    right: 12px;
+    bottom: 4px;
+
+    animation-delay: -3s;
+}
+
+.games-sticker {
+    width: 63px;
+
+    right: 12px;
+    bottom: 4px;
+
+    animation-delay: -1.5s;
+}
+
+
+/* Dreams card sticker */
+
+.dream-sticker {
+    width: 72px;
+
+    right: 12px;
+    top: -25px;
+
+    transform: rotate(10deg);
+}
+
+
+/* ========================================
+   CHARACTER ANIMATIONS
+======================================== */
+
+@keyframes character-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(4deg);
+    }
+}
+
+@keyframes sticker-bob {
+
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -5px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE STICKERS
+======================================== */
+
+@media (max-width: 760px) {
+    /* Keep the mobile layout spacious */
+
+    .sticker {
+        width: 65px;
+    }
+
+    .purin-float {
+        top: 17%;
+        left: 0;
+        width: 68px;
+    }
+
+    .piano-float {
+        top: 66%;
+        left: 0;
+        width: 65px;
+    }
+
+    .keroppi-float {
+        top: 40%;
+        right: 0;
+        width: 68px;
+    }
+
+    .card-sticker {
+        width: 48px;
+    }
+
+    .about-sticker {
+        width: 58px;
+    }
+
+    .dream-sticker {
+        width: 52px;
+    }
+
+    .favorite-card {
+        padding-bottom: 65px;
+    }
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .floating-character,
+    .card-sticker {
+        animation: none !important;
+    }
+}
+
+/* ========================================
+   INTERACTIVE DESKTOP DOCK
+======================================== */
+
+/* Yonari's slim, wide desktop dock ♡ */
+
+.desktop-dock {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+
+    width: min(420px, calc(100vw - 40px));
+    box-sizing: border-box;
+    padding: 8px 24px;
+
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(250, 206, 228, 0.836);
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(227, 170, 203, 0.721),
+        0 0 14px rgba(251, 201, 228, 0.705);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 60;
+}
+
+.dock-folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    min-width: 72px;
+    padding: 4px 6px;
+
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+
+    color: var(--text);
+    font: inherit;
+    font-size: 0.72rem;
+
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dock-folder:hover {
+    background: #FFF0F7;
+    transform: translateY(-3px);
+}
+
+.dock-folder .folder-icon {
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+.dock-folder:hover {
+    background: #F4ECFF;
+    transform: translateY(-3px);
+}
+
+.folder-icon {
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+/* ========================================
+   DRAGGABLE DIARY WINDOWS
+======================================== */
+
+.window-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.desktop-window {
+    position: fixed;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(360px, calc(100vw - 32px));
+    max-height: min(470px, 70vh);
+    overflow: auto;
+
+    background: rgba(255, 250, 253, 0.97);
+    border: 2px solid white;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 45px rgba(120, 100, 160, 0.22);
+
+    pointer-events: auto;
+    animation: window-pop 0.22s ease-out;
+}
+
+.desktop-window[hidden] {
+    display: none;
+}
+
+.window-titlebar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    background: linear-gradient(100deg, #FCE3F0, #E7E5FF);
+    border-bottom: 1px solid #F0E3F3;
+
+    color: #82729F;
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.window-titlebar:active {
+    cursor: grabbing;
+}
+
+.window-close {
+    flex-shrink: 0;
+
+    width: 27px;
+    height: 27px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #FFD5E6;
+    color: #AD638A;
+
+    font-size: 1.2rem;
+    line-height: 1;
+
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.window-close:hover {
+    background: #FFBDD8;
+    transform: scale(1.08);
+}
+
+.window-content {
+    padding: 22px;
+    font-size: 0.88rem;
+}
+
+.window-content h3 {
+    margin-bottom: 10px;
+    color: #8D9FCC;
+    font-size: 1.1rem;
+}
+
+.window-content p {
+    margin-bottom: 10px;
+}
+
+.window-content ul {
+    padding-left: 20px;
+    margin: 12px 0;
+}
+
+.window-content li {
+    margin-bottom: 7px;
+}
+
+.window-emoji {
+    font-size: 2rem;
+}
+
+.diary-signature {
+    text-align: right;
+    color: var(--pink-dark);
+}
+
+@keyframes window-pop {
+    from {
+        opacity: 0;
+        scale: 0.94;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+/* Mobile dock and windows */
+
+@media (max-width: 480px) {
+    .desktop-dock {
+        bottom: 10px;
+        gap: 3px;
+        padding: 7px;
+    }
+
+    .dock-folder {
+        min-width: 68px;
+        padding: 7px 6px;
+        font-size: 0.65rem;
+    }
+
+    .folder-icon {
+        font-size: 1.5rem;
+    }
+
+    .desktop-window {
+        top: 12%;
+        max-height: 68vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .desktop-window {
+        animation: none;
+    }
+}
+
+/* ========================================
+   NAVIGATION DOCK TOGGLE
+======================================== */
+
+.dock-toggle {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: #83A9D7;
+    /* Blue when dock is hidden */
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+/* Pink when the dock is visible */
+.dock-toggle.dock-visible {
+    color: #D78FB5;
+}
+
+.dock-toggle:hover {
+    text-shadow: 0 0 10px rgba(255, 174, 211, 0.45);
+}
+
+/* Mobile-friendly navigation spacing */
+@media (max-width: 760px) {
+    .navigation {
+        gap: 12px;
+    }
+
+    .dock-toggle {
+        font-size: 0.82rem;
+    }
+}
+
+/* Hidden dock should take up no space */
+.desktop-dock[hidden] {
+    display: none !important;
+}
+
+/* ========================================
+   STEP 4.1 — FLOATING MAGICAL GLITTER
+======================================== */
+
+.magic-glitter {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glitter-particle {
+    position: absolute;
+
+    color: var(--glitter-color, #DCCBFF);
+    font-size: var(--glitter-size, 12px);
+
+    opacity: 0;
+    text-shadow: 0 0 8px currentColor;
+
+    animation: magical-drift var(--glitter-duration, 7s) ease-in-out var(--glitter-delay, 0s) infinite;
+}
+
+@keyframes magical-drift {
+    0% {
+        opacity: 0;
+        transform: translateY(15px) rotate(0deg) scale(0.6);
+    }
+
+    25% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: translateY(-25px) rotate(90deg) scale(1);
+    }
+
+    75% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) rotate(180deg) scale(0.5);
+    }
+}
+
+/* Keep the glitter gentle for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+    .glitter-particle {
+        animation: none;
+        opacity: 0.25;
+    }
+}
+
+
+/* ========================================
+   STEP 4.2 — MAGICAL CLICK ANIMATION
+======================================== */
+
+.click-burst-particle {
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+
+    font-size: 16px;
+    line-height: 1;
+
+    text-shadow: 0 0 8px currentColor;
+
+    animation: click-burst 650ms ease-out forwards;
+}
+
+@keyframes click-burst {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+    }
+
+    45% {
+        opacity: 1;
+        transform:
+            translate(calc(-50% + var(--burst-x) * 0.65),
+                calc(-50% + var(--burst-y) * 0.65)) scale(1.15) rotate(45deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(calc(-50% + var(--burst-x)),
+                calc(-50% + var(--burst-y))) scale(0.3) rotate(90deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .click-burst-particle {
+        animation-duration: 200ms;
+    }
+}
+
+
+/* ========================================
+   STEP 4.3 — MAGICAL STICKER ANIMATIONS
+======================================== */
+
+/* Floating Sanrio companions */
+.floating-character {
+    animation:
+        character-float 5s ease-in-out infinite,
+        sticker-twinkle 4s ease-in-out infinite;
+}
+
+/* Welcome section stickers */
+.welcome-sticker-image {
+    animation: sticker-twinkle 4s ease-in-out infinite;
+}
+
+/* Give each character a slightly different rhythm */
+.purin-float {
+    animation-delay: -1s, 0s;
+}
+
+.piano-float {
+    animation-delay: -3s, -1.5s;
+}
+
+.keroppi-float {
+    animation-delay: -2s, -2.5s;
+}
+
+.sticker-right .welcome-sticker-image {
+    animation-delay: -2s;
+}
+
+@keyframes sticker-twinkle {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 0 transparent);
+    }
+
+    50% {
+        filter: brightness(1.06) drop-shadow(0 0 7px rgba(255, 211, 235, 0.65));
+    }
+}
+
+
+/* ========================================
+   MAGICAL FAVORITE CARD HOVER
+======================================== */
+
+.favorite-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 28px rgba(150, 130, 180, 0.16),
+        0 0 16px rgba(255, 214, 233, 0.35);
+
+    border-color: rgba(255, 214, 233, 0.8);
+}
+
+.favorite-card>img {
+    transition: transform 0.3s ease;
+}
+
+.favorite-card:hover>img {
+    transform: scale(1.1) rotate(-4deg);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .favorite-card,
+    .favorite-card>img {
+        transition: none;
+    }
+
+    .favorite-card:hover {
+        transform: none;
+    }
+
+    .favorite-card:hover>img {
+        transform: none;
+    }
+}
+
+
+/* ========================================
+   STEP 4.4 — TINY HEART REACTIONS
+======================================== */
+
+.love-reaction {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+
+    font-size: 20px;
+    line-height: 1;
+
+    animation: heart-float 800ms ease-out forwards;
+}
+
+@keyframes heart-float {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.4) rotate(-10deg);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -12px) scale(1.15) rotate(8deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -48px) scale(0.7) rotate(-8deg);
+    }
+}
+
+/* Cute opening animation for desktop windows */
+.desktop-window {
+    transform-origin: center;
+    animation: window-pop 220ms ease-out;
+}
+
+@keyframes window-pop {
+    from {
+        opacity: 0;
+        scale: 0.94;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .love-reaction {
+        animation-duration: 200ms;
+    }
+
+    .desktop-window {
+        animation: none;
+    }
+}
+
+
+/* ========================================
+   YONARI MINI-APPS
+======================================== */
+
+/* MUSIC PLAYER */
+
+.music-content {
+    text-align: center;
+}
+
+.music-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 18px;
+
+    border-radius: 22px;
+    background: linear-gradient(135deg, #FFE0EF, #E2D5FF);
+
+    font-size: 3.5rem;
+    box-shadow: 0 6px 18px rgba(190, 150, 200, 0.18);
+}
+
+.music-description,
+.music-note {
+    color: #998BA9;
+    font-size: 0.8rem;
+}
+
+.music-file-label {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 9px 13px;
+
+    border-radius: 14px;
+    background: #FFF0F7;
+    color: #B8759A;
+
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+#musicFile {
+    display: block;
+    width: 100%;
+    margin: 0 auto 14px;
+
+    color: var(--text);
+    font-size: 0.75rem;
+}
+
+#musicAudio {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.music-note {
+    margin-top: 10px;
+}
+
+
+/* TO-DO LIST */
+
+.task-subtitle,
+.task-count {
+    color: #998BA9;
+    font-size: 0.8rem;
+}
+
+.task-form {
+    display: flex;
+    gap: 7px;
+    margin: 16px 0 12px;
+}
+
+.task-form input {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    flex: 1;
+
+    padding: 10px;
+    border: 1px solid #E7DDF1;
+    border-radius: 11px;
+    background: #FFFFFF;
+
+    color: var(--text);
+    font: inherit;
+    font-size: 0.78rem;
+}
+
+.task-add-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 11px;
+
+    background: #F8DDED;
+    color: #986A91;
+
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.task-add-button:hover {
+    background: #F3CDE2;
+}
+
+.task-count {
+    margin-bottom: 10px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px;
+    border-radius: 12px;
+    background: #FFF5FA;
+
+    font-size: 0.82rem;
+}
+
+.task-item input[type="checkbox"] {
+    flex-shrink: 0;
+    accent-color: #D78FB5;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+
+.task-delete {
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    color: #C77CA1;
+
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.task-footer {
+    margin-top: 18px;
+    color: #998BA9;
+    font-size: 0.78rem;
+}
+
+
+/* MEMORY ALBUM */
+
+
+.memory-content {
+    text-align: center;
+}
+
+.memory-intro,
+.memory-note {
+    color: #998BA9;
+    font-size: 0.8rem;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+/* Cute white scrapbook frames ♡ */
+.memory-card {
+    min-width: 0;
+    margin: 0;
+    padding: 9px;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 12px;
+    background: #FFFFFF;
+
+    box-shadow:
+        0 3px 10px rgba(190, 150, 200, 0.12),
+        0 0 0 1px #F6E5F0;
+
+    transform: rotate(-1deg);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.memory-card:nth-child(even) {
+    transform: rotate(1.5deg);
+}
+
+.memory-card:hover {
+    transform: translateY(-4px) rotate(0deg);
+    box-shadow:
+        0 7px 18px rgba(190, 150, 200, 0.2),
+        0 0 0 1px #EED6E7;
+}
+
+/* Uniform picture sizes */
+/* Uniform 4:5 portrait photos ♡ */
+.memory-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 8px;
+    background: #FFF8FC;
+}
+
+/* Picture captions */
+.memory-card figcaption {
+    padding: 8px 2px 3px;
+    color: #88799D;
+    font-size: 0.72rem;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.memory-note {
+    margin-top: 18px;
+}
+
+
+
+/* MINI-APP MOBILE ADJUSTMENTS */
+
+@media (max-width: 480px) {
+    .task-form {
+        flex-wrap: wrap;
+    }
+
+    .task-form input {
+        flex-basis: 150px;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .memory-card {
+        transition: none;
+    }
+}
+
+/* Custom PNG icons for Yonari's dock ♡ */
+
+.dock-icon {
+    display: block;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+
+    transition: transform 0.2s ease;
+}
+
+.dock-folder:hover .dock-icon {
+    transform: translateY(-2px) scale(1.08);
+}
+
+/* Custom PNG icons inside mini-app windows ♡ */
+
+.app-tab-icon {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.music-cover .app-tab-icon {
+    width: 76px;
+    height: 76px;
+}
+
+.window-emoji .app-tab-icon {
+    width: 64px;
+    height: 64px;
+}
